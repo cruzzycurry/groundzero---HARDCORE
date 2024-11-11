@@ -5,39 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ground Zero - The God of Planets</title>
     <style>
+        /* Global Styles */
         body {
             font-family: Arial, sans-serif;
             background-color: #1e1f26;
             color: #f3f3f3;
-            text-align: center;
             margin: 0;
+            padding: 0;
+            text-align: center;
         }
 
+        /* Header with Title */
         header {
             background-color: #2d303a;
             padding: 20px;
             color: #ffcc00;
         }
 
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #333;
+            padding: 10px;
+        }
+
+        /* Planet Button Styling */
+        .planet-button {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .planet-button:hover {
+            transform: scale(1.1);
+        }
+
+        /* Tooltip for Planet Description */
+        .planet-button::after {
+            content: attr(data-description);
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px;
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .planet-button:hover::after {
+            opacity: 1;
+        }
+
+        /* Main Content */
         main {
             padding: 20px;
-        }
-
-        a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <h1>Ground Zero - The God of Planets</h1>
     </header>
+
+    <!-- Navigation Bar with Planet Buttons -->
+    <nav>
+        <a href="planet-earth.html">
+            <img src="images/earth.png" alt="Earth" class="planet-button" data-description="Earth: The cradle of humanity.">
+        </a>
+        <a href="planet-mars.html">
+            <img src="images/mars.png" alt="Mars" class="planet-button" data-description="Mars: The red planet, symbol of resilience.">
+        </a>
+        <a href="planet-jupiter.html">
+            <img src="images/jupiter.png" alt="Jupiter" class="planet-button" data-description="Jupiter: The king of the skies.">
+        </a>
+        <a href="planet-saturn.html">
+            <img src="images/saturn.png" alt="Saturn" class="planet-button" data-description="Saturn: Known for its majestic rings.">
+        </a>
+    </nav>
+
+    <!-- Main Content -->
     <main>
         <p>Welcome to the world of the God of Planets. Explore each planet under divine guidance.</p>
         <p><a href="planets.html">Explore the Planets</a></p>
